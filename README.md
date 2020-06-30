@@ -47,7 +47,7 @@ An example assembly instruction is `LDA #$22`{lang=asm6502}.
 
 The result is as expected:
 
-![](/resources/example-usage.png)
+<img src="./resources/example-usage.png" alt="Example usage" width="429" height="45" />
 
 The rules for the language annotation are simple:
 
