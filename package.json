@@ -8,6 +8,7 @@
     "highlight",
     "prism",
     "prismjs",
+    "inline",
     "backtick"
   ],
   "homepage": "https://github.com/stevejay/markdown-it-prism-backticks",

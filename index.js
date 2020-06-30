@@ -14,6 +14,13 @@ function loadPrismLang(lang) {
   // will be loaded into the old Prism object and will not be found
   // by the loading code below.
 
+  if (!Prism) {
+    throw new Error(
+      "markdown-it-prism-backticks says: " +
+        "You need to import 'prismjs' to make the global Prism object available to this plugin"
+    );
+  }
+
   let prismLanguage = Prism.languages[lang];
 
   if (!prismLanguage) {
@@ -22,7 +29,7 @@ function loadPrismLang(lang) {
 
     if (!prismLanguage) {
       throw new Error(
-        `I loaded the language '${lang}' into Prism but I cannot find it. ` +
+        `markdown-it-prism-backticks says: I loaded the language '${lang}' into Prism but I cannot find it. ` +
           "The Prism global object has probably been initialized more than once."
       );
     }
