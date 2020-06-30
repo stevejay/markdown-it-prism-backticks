@@ -1,0 +1,108 @@
+{
+  "name": "markdown-it-prism-backticks",
+  "version": "1.0.0",
+  "description": "MarkdownIt plugin for highlighting inline code snippets using Prism.",
+  "keywords": [
+    "markdown-it",
+    "markdown-it-plugin",
+    "highlight",
+    "prism",
+    "prismjs",
+    "backtick"
+  ],
+  "homepage": "https://github.com/stevejay/markdown-it-prism-backticks",
+  "license": "MIT",
+  "author": {
+    "name": "Steve Johns",
+    "url": "https://www.middle-engine.com/"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "build/index.js",
+    "CHANGELOG.md"
+  ],
+  "main": "build/index.js",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevejay/markdown-it-prism-backticks.git"
+  },
+  "scripts": {
+    "build": "babel *.js -d build",
+    "lint": "eslint *.js",
+    "prepare": "npm run build",
+    "unittest": "mocha test.js",
+    "test": "npm run lint && npm run unittest",
+    "upgrade-interactive": "npm-check --update"
+  },
+  "peerDependencies": {
+    "prismjs": "^1.20.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.10.3",
+    "@babel/core": "7.10.3",
+    "@babel/preset-env": "7.10.3",
+    "@babel/register": "7.10.3",
+    "@commitlint/cli": "9.0.1",
+    "@commitlint/config-conventional": "9.0.1",
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.0",
+    "babel-plugin-add-module-exports": "1.0.2",
+    "chai": "4.2.0",
+    "chai-string": "1.5.0",
+    "eslint": "7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "4.2.5",
+    "lint-staged": "^10.2.11",
+    "markdown-it": "11.0.0",
+    "mocha": "8.0.1",
+    "npm-check": "^5.9.2",
+    "prettier": "2.0.5",
+    "prismjs": "^1.20.0",
+    "semantic-release": "17.1.1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "mocha": {
+    "require": "@babel/register"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogTitle": "# [Changelog](http://keepachangelog.com/)\n\nThis project adheres to [Semantic Versioning](http://semver.org/)."
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ]
+    ]
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
