@@ -45,9 +45,16 @@ Now you can add a language annotation to any inline backticks content that you w
 An example assembly instruction is `LDA #$22`{lang=asm6502}.
 ```
 
-And the result is as expected:
+The result is as expected:
 
 ![](/resources/example-usage.png)
+
+The rules for the language annotation are simple:
+
+- No whitespace between the closing backtick and the opening curly brace.
+- No whitespace in the language annotation.
+
+See [stevejay/middleengine-website](https://github.com/stevejay/middleengine-website) for an example of a repository that uses this plugin.
 
 ## Usage with other MarkdownIt plugins
 
