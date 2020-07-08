@@ -49,6 +49,8 @@ The result is as expected:
 
 <img src="./resources/example-usage.png" alt="Example usage" width="429" height="45" />
 
+(The exact visual appearance will depend on the Prism theme that you are using.)
+
 The rules for the language annotation are simple:
 
 - No whitespace between the closing backtick and the opening curly brace.
