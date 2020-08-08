@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-prism-backticks",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "MarkdownIt plugin for highlighting inline code snippets using Prism.",
   "keywords": [
     "markdown-it",
